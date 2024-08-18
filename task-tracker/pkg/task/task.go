@@ -39,6 +39,16 @@ func ListTasks(status TaskStatus) error {
 		return err
 	}
 
+	if len(tasks) == 0 {
+		fmt.Println(
+			lipgloss.NewStyle().
+				Bold(true).
+				Padding(1, 0).
+				Foreground(lipgloss.Color("#FFCC66")).
+				Render("No tasks found"))
+		return nil
+	}
+
 	var filteredTasks []Task
 	switch status {
 	case "all":
@@ -162,13 +172,7 @@ func DeleteTask(id int64) error {
 	}
 
 	if len(updatedTasks) == len(tasks) {
-		notFoundStyle := lipgloss.NewStyle().
-			Bold(true).
-			Foreground(lipgloss.Color("#FFCC66")).
-			Padding(1, 0).
-			Render(fmt.Sprintf("Task not found (ID: %d)", id))
-		fmt.Printf("%s", notFoundStyle)
-		return nil
+		return fmt.Errorf("task not found (ID: %d)", id)
 	}
 
 	formattedId := lipgloss.NewStyle().
@@ -205,13 +209,7 @@ func UpdateTaskStatus(id int64, status TaskStatus) error {
 	}
 
 	if !taskExists {
-		notFoundStyle := lipgloss.NewStyle().
-			Bold(true).
-			Foreground(lipgloss.Color("#FFCC66")).
-			Padding(1, 0).
-			Render(fmt.Sprintf("Task not found (ID: %d)", id))
-		fmt.Printf("%s", notFoundStyle)
-		return nil
+		return fmt.Errorf("task not found (ID: %d)", id)
 	}
 
 	formattedId := lipgloss.NewStyle().
@@ -240,13 +238,7 @@ func UpdateTaskDescription(id int64, description string) error {
 	}
 
 	if !taskExists {
-		notFoundStyle := lipgloss.NewStyle().
-			Bold(true).
-			Foreground(lipgloss.Color("#FFCC66")).
-			Padding(1, 0).
-			Render(fmt.Sprintf("Task not found (ID: %d)", id))
-		fmt.Printf("%s", notFoundStyle)
-		return nil
+		return fmt.Errorf("task not found (ID: %d)", id)
 	}
 
 	formattedId := lipgloss.NewStyle().

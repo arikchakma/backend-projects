@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/arikchakma/backend-projects/task-tracker/cmd"
+	"github.com/arikchakma/backend-projects/github-user-activity/cmd"
 	"github.com/charmbracelet/lipgloss"
 )
 

@@ -1,4 +1,4 @@
-module github.com/arikchakma/backend-projects/task-tracker
+module github.com/arikchakma/backend-projects/github-user-activity
 
 go 1.21.0
 
