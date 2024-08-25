@@ -5,7 +5,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/arikchakma/backend-projects/expense-tracker/pkg/log"
+	"github.com/arikchakma/backend-projects/expense-tracker/internal/log"
 	"github.com/charmbracelet/lipgloss"
 )
 

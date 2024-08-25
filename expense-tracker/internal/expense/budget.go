@@ -3,7 +3,7 @@ package expense
 import (
 	"fmt"
 
-	"github.com/arikchakma/backend-projects/expense-tracker/pkg/log"
+	"github.com/arikchakma/backend-projects/expense-tracker/internal/log"
 )
 
 type Budget struct {

@@ -1,7 +1,7 @@
 package cmd
 
 import (
-	"github.com/arikchakma/backend-projects/expense-tracker/pkg/expense"
+	"github.com/arikchakma/backend-projects/expense-tracker/internal/expense"
 	"github.com/spf13/cobra"
 )
 

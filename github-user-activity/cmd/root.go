@@ -3,7 +3,7 @@ package cmd
 import (
 	"fmt"
 
-	"github.com/arikchakma/backend-projects/github-user-activity/pkg/activity"
+	"github.com/arikchakma/backend-projects/github-user-activity/internal/activity"
 	"github.com/spf13/cobra"
 )
 
